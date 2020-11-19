@@ -1,0 +1,1780 @@
+[
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_acolyte_of_sokth",
+        "name": "Acolyte of Sokth",
+        "chance": "25",
+        "event": "Character Looted Settlement",
+        "condition": "not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_acolyte_of_sokth\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_charnel_valley_necrotect",
+        "name": "Charnel Valley Necrotect",
+        "chance": "35",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():region():settlement():get_climate() == \"climate_mountain\" and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_charnel_valley_necrotect\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_cultist_of_usirian",
+        "name": "Cultist of Usirian",
+        "chance": "25",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_untainted\") < 0.7 and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_cultist_of_usirian\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_dog_headed_ushabti",
+        "name": "Dog-Headed Ushabti",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "cm:char_is_general(context:character()) and not context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh2_dlc09_tmb_tomb_kings\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh2_dlc09_tmb_tomb_kings\") and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_dog_headed_ushabti\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_high_born_of_khemri",
+        "name": "High-Born of Khemri",
+        "chance": "40",
+        "event": "Character Turn Start",
+        "condition": "cm:char_is_general_with_army(context:character()) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20 and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_high_born_of_khemri\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_legionnaire_of_asaph",
+        "name": "Legionnaire of Asaph",
+        "chance": "20",
+        "event": "Character Target Action",
+        "condition": "context:mission_result_failure() and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_legionnaire_of_asaph\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_priest_of_ptra",
+        "name": "Priest of Ptra",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():region():owning_faction():culture() == \"wh_main_vmp_vampire_counts\" and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_priest_of_ptra\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_skeletal_labourer",
+        "name": "Skeletal Labourer",
+        "chance": "25",
+        "event": "Character Sacked Settlement",
+        "condition": "not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_skeletal_labourer\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_tombfleet_taskmaster",
+        "name": "Tombfleet Taskmaster",
+        "chance": "5",
+        "event": "Character Post Battle Release Captives",
+        "condition": "not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_tombfleet_taskmaster\")"
+    },
+    {
+        "refname": "wh2_dlc09_anc_follower_tmb_ushabti_bodyguard",
+        "name": "Ushabti Bodyguard",
+        "chance": "",
+        "event": "Character Gain Level",
+        "condition": "char_army_has_unit(context:character(), {\"wh2_dlc09_tmb_mon_ushabti_0\", \"wh2_dlc09_tmb_mon_ushabti_1\"}) and not context:character():has_ancillary(\"wh2_dlc09_anc_follower_tmb_ushabti_bodyguard\")"
+    },
+    {
+        "refname": "wh2_dlc15_anc_follower_mandelour",
+        "name": "Sir Man Delour",
+        "chance": "100",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():name() == \"wh2_main_gnoblar_country_pigbarter\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_apprentice_assassin",
+        "name": "Assassin's Apprentice",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and char_has_tech(context:character(), \"tech_def_2_3_3\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_murder\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_beastmaster",
+        "name": "Wyrmhunter",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_beasts\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_cultist",
+        "name": "Pleasure Cultist",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_pleasure_cult\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_daemon_whisperer",
+        "name": "Daemon Whisperer",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_pleasure_cult\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_diplomat_slaanesh",
+        "name": "Dark Prince's Envoy",
+        "chance": "5",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and char_has_tech(context:character(), \"tech_def_3_3_3\") and context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_chaos\") > 0.4 and not context:character():has_ancillary(\"wh2_main_anc_follower_def_diplomat_slaanesh\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_fanatic",
+        "name": "Zealot",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_worship\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_harem_attendant",
+        "name": "Eunuch",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_pleasure_cult\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_harem_keeper",
+        "name": "Harem Keeper",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_pleasure_cult\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_musician_choirmaster",
+        "name": "Evil Choirmaster",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_farm\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_musician_drum",
+        "name": "Degenerate Kettle Drummer",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_order\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_musician_flute",
+        "name": "Deviant Flautist",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_pleasure_cult\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_organ_merchant",
+        "name": "Organ Merchant",
+        "chance": "6",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_def_2_3_0\") and context:character():faction():trade_value_percent() > 40"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_overseer",
+        "name": "Overseer",
+        "chance": "7",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_def_1_2_0\") and context:character():faction():trade_value_percent() > 20 and context:character():faction():treasury() > 2000"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_propagandist",
+        "name": "Rhetorician",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_def_worship\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_servant",
+        "name": "Elfservant",
+        "chance": "50",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_def_2_2_0\") and (not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() > 10"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_admiral",
+        "name": "Herald of Mathlann",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_port\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_counsellor",
+        "name": "Advisor to the King",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_court\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_minstrel",
+        "name": "Minstrel",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_order\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_poisoner",
+        "name": "Herbalist",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_mages\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_trappist",
+        "name": "Disciple of the Phoenix",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_mages\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_clerk",
+        "name": "Administrator",
+        "chance": "7",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():culture() == \"wh2_main_lzd_lizardmen\" and context:character():battles_won() > 19"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_architect",
+        "name": "Temple Architect",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_lzd_4_4\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh_main_sch_settlement_major\") or (region_has_chain_or_superchain(context:character():region(), \"wh_main_sch_settlement_major_coast\")))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_astrologer",
+        "name": "Astromancer",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_lzd_scrying\")) and context:character():faction():has_pooled_resource(\"wh2_main_ritual_currency\") and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_astronomer",
+        "name": "Astronomer",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_lzd_worship_oldones\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_cleaner",
+        "name": "Spawning Pool Cleaner",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_lzd_1_6\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_military2_stables\") or (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_military1_barracks\")))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_defence_expert",
+        "name": "Great Warder",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_defence_major_lzd\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_fan_waver",
+        "name": "Fan Waver",
+        "chance": "5",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():culture() == \"wh2_main_lzd_lizardmen\" and context:character():battles_won() > 3"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_gardener",
+        "name": "Carnivorous Horticulturist",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_defence_major_lzd\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_librarian",
+        "name": "Sacred Plaque Librarian",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():has_pooled_resource(\"wh2_main_ritual_currency\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_metallurgist",
+        "name": "Star-Metallurgist",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "char_has_tech(context:character(), \"tech_lzd_4_6\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh_main_sch_settlement_major\") or (region_has_chain_or_superchain(context:character():region(), \"wh_main_sch_settlement_major_coast\")))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_temple_cleaner",
+        "name": "Temple Keeper",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_lzd_worship_sotek\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_veteran_warrior",
+        "name": "Scarred One",
+        "chance": "1",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() > 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_defence_minor\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_slave_skv",
+        "name": "Elf-Thing Slave",
+        "chance": "33",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:garrison_residence():faction():culture() == \"wh2_main_hef_high_elves\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_bell_polisher",
+        "name": "Bell Polisher",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_skv_order\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_chemist",
+        "name": "Alchemist",
+        "chance": "1",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_clerk",
+        "name": "Clerk",
+        "chance": "25",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:mission_result_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_female",
+        "name": "Breeder",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_skv_farm\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_hell_pit_attendant",
+        "name": "Hell Pit Attendant",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and char_has_tech(context:character(), \"tech_skv_4_1\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_mechanic",
+        "name": "Mechanic",
+        "chance": "10",
+        "event": "Character Was In battle",
+        "condition": "context:character():won_battle() and context:character():character_type(\"engineer\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_messenger",
+        "name": "Messenger",
+        "chance": "1",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_sculptor",
+        "name": "Warpstone Sculptor",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0 and context:character():faction():has_pooled_resource(\"wh2_main_ritual_currency\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_trainee_assassin",
+        "name": "Eshin Apprentice",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_skv_assassins\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_beard_weaver",
+        "name": "Beard Weaver",
+        "chance": "50",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh_main_dwf_dwarfs\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh_main_dwf_dwarfs\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_sacrificial_victim_dwarf",
+        "name": "Beard-Thing Sacrifice",
+        "chance": "11",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh_main_dwf_dwarfs\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh_main_dwf_dwarfs\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_sacrificial_victim_lizardman",
+        "name": "Reptile-Thing Sacrifice",
+        "chance": "11",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh2_main_lzd_lizardmen\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh2_main_lzd_lizardmen\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_sacrificial_victim_skv",
+        "name": "Rat-Spawn Sacrifice",
+        "chance": "11",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh2_main_skv_skaven\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh2_main_skv_skaven\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_priestess_isha",
+        "name": "Priestess of Isha",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_special_everqueen_court\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_dragon_tamer",
+        "name": "Caledorian Dragon Rouser",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_dragons\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_dragon_armourer",
+        "name": "Dragon Armourer",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_dragons\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_horsemaster",
+        "name": "Ellyrian Horsemaster",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_special_ellyrian_stables\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_priest_vaul",
+        "name": "Priest of Vaul",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_special_hall_of_dragons\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_librarian",
+        "name": "Sapherian Bibliothecary",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_special_tower_of_hoeth\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_shrine_keeper",
+        "name": "Shrine Attendant",
+        "chance": "25",
+        "event": "Character Turn Start",
+        "condition": "not context:character():character_type(\"colonel\") and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_hef_worship\")) and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_acolyte_priest",
+        "name": "Acolyte Mage",
+        "chance": "1",
+        "event": "Character Gain Level",
+        "condition": "context:character():has_region() and context:character():turns_in_own_regions() >= 2 and (region_has_chain_or_superchain(context:character():region(), \"wh2_main_sch_support2_worship\"))"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_chieftains_pet",
+        "name": "Chieftain\u00e2\u20ac\u2122s Pet",
+        "chance": "35",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():won_battle() and (char_army_has_unit(context:character(), \"wh_dlc03_bst_inf_chaos_warhounds_1\") or char_army_has_unit(context:character(), \"wh_dlc03_bst_inf_chaos_warhounds_0\"))"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_spawn_wrangler",
+        "name": "Spawn-Wrangler",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_can_recruit_unit(context:character(), \"wh_dlc03_bst_mon_chaos_spawn_0\")"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_doe",
+        "name": "Doe",
+        "chance": "5",
+        "event": "Character Razed Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():culture() == \"wh_dlc03_bst_beastmen\" and not context:character():has_ancillary(\"wh_dlc03_anc_follower_beastmen_doe\")"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_ungor_whelp",
+        "name": "Ungor Whelp",
+        "chance": "3",
+        "event": "Character Razed Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():battles_won() > 5 and not context:character():faction():ancillary_exists(\"wh_dlc03_anc_follower_beastmen_ungor_whelp\")"
+    },
+    {
+        "refname": "wh2_dlc11_anc_follower_cst_sartosa_navigator",
+        "name": "Sartosan Mapwright",
+        "chance": "15",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and (not context:character():model():pending_battle():defender():won_battle() and (context:character():model():pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (not context:character():model():pending_battle():attacker():won_battle() and (context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh2_dlc11_anc_follower_cst_shipwright",
+        "name": "Boy Seaman",
+        "chance": "15",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and (not context:character():model():pending_battle():defender():won_battle() and (context:character():model():pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (not context:character():model():pending_battle():attacker():won_battle() and (context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_mannish_thrall",
+        "name": "Mannish Thrall",
+        "chance": "8",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and (not context:character():model():pending_battle():defender():won_battle() and (context:character():model():pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (not context:character():model():pending_battle():attacker():won_battle() and (context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:character():model():pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_dlc08_anc_follower_vargs_beast_trainer",
+        "name": "Varag's Beast Trainer",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and (char_can_recruit_unit(context:character(), \"wh_dlc08_nor_mon_war_mammoth_0\") or char_can_recruit_unit(context:character(), \"wh_dlc08_nor_mon_war_mammoth_1\") or char_can_recruit_unit(context:character(), \"wh_dlc08_nor_mon_war_mammoth_2\") or char_can_recruit_unit(context:character(), \"wh_main_nor_mon_chaos_warhounds_0\") or char_can_recruit_unit(context:character(), \"wh_main_nor_mon_chaos_warhounds_1\"))"
+    },
+    {
+        "refname": "wh_dlc08_anc_follower_baernsonlings_werekin",
+        "name": "Graeling Werekin",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and (char_can_recruit_unit(context:character(), \"wh_dlc08_nor_mon_skinwolves_0\") or char_can_recruit_unit(context:character(), \"wh_dlc08_nor_mon_skinwolves_1\"))"
+    },
+    {
+        "refname": "wh_dlc08_anc_follower_baernsonlings_werekin",
+        "name": "Graeling Werekin",
+        "chance": "5",
+        "event": "Character Razed Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character())"
+    },
+    {
+        "refname": "wh2_dlc11_anc_follower_cst_drawn_chef",
+        "name": "Unliving Ship's Cook",
+        "chance": "15",
+        "event": "Character Razed Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character())"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_zealot",
+        "name": "Zealot",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():majority_religion() == \"wh_main_religion_untainted\""
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_herdstone_keeper",
+        "name": "Herdstone Keeper",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():majority_religion() == \"wh_main_religion_untainted\""
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_carrion",
+        "name": "Carrion",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():majority_religion() == \"wh_main_religion_untainted\""
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_cultist",
+        "name": "Cultist",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():majority_religion() == \"wh_main_religion_untainted\""
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_huscarl",
+        "name": "Huscarl",
+        "chance": "5",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_pet_wolf_rat",
+        "name": "Pet Wolf Rat",
+        "chance": "10",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_gravedigger",
+        "name": "Gravedigger",
+        "chance": "8",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_organ_merchant",
+        "name": "Organ Merchant",
+        "chance": "5",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_assassin",
+        "name": "Court Attendant",
+        "chance": "5",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_dog_boy_scout",
+        "name": "Dog Boy Scout",
+        "chance": "10",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_flesh_golem",
+        "name": "Flesh Golem",
+        "chance": "5",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_candle_maker",
+        "name": "Candle Maker",
+        "chance": "5",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_failure() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_counterspy",
+        "name": "Druchii Hunter",
+        "chance": "25",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_failure() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_bodyguard",
+        "name": "Bodyguard",
+        "chance": "13",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_failure() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_bodyguard",
+        "name": "Bodyguard",
+        "chance": "15",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_failure() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_possessed_mirror",
+        "name": "Possessed Mirror",
+        "chance": "10",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:mission_result_failure() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_rogue",
+        "name": "Rogue",
+        "chance": "8",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and context:character():model():turn_number() % 2 == 0 and context:character():faction():is_human() and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_thug",
+        "name": "Thug",
+        "chance": "8",
+        "event": "Character Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\") and not context:character():character_subtype(\"wh2_dlc10_hef_shadow_walker\") ) and not (context:character():model():turn_number() % 2 == 0) and context:character():faction():is_human() and context:mission_result_success() or context:mission_result_critial_success() and not context:ability() == \"assist_army\""
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_troll_herder",
+        "name": "Troll Herder",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_army_has_unit(context:character(), \"wh_main_grn_mon_trolls\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_watchman",
+        "name": "Watchman",
+        "chance": "13",
+        "event": "Character Garrison Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:mission_result_success()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_scavenger_1",
+        "name": "Scavenger",
+        "chance": "9",
+        "event": "Character Garrison Target Action",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:mission_result_success()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_estalian_diestro",
+        "name": "Estalian Diestro",
+        "chance": "6",
+        "event": "On End Of Character's Turn",
+        "condition": "not context:character():character_type(\"colonel\") and (not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():faction():culture() == \"wh_main_emp_empire\" and context:character():action_points_remaining_percent() > 75 and (context:character():region():name() == \"wh_main_estalia_bilbali\" or context:character():region():name() == \"wh_main_estalia_magritta\" or context:character():region():name() == \"wh_main_estalia_tobaro\") and not context:character():has_ancillary(\"wh_main_anc_follower_empire_estalian_diestro\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_halfling_fieldwarden",
+        "name": "Fieldwarden",
+        "chance": "6",
+        "event": "On End Of Character's Turn",
+        "condition": "not context:character():character_type(\"colonel\") and (not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():action_points_remaining_percent() > 75 and context:character():region():name() == \"wh_main_stirland_the_moot\" and not context:character():has_ancillary(\"wh_main_anc_follower_halfling_fieldwarden\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_serial_loota",
+        "name": "Serial Loota",
+        "chance": "15",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_treasure_hunter",
+        "name": "Treasure Hunter",
+        "chance": "5",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_manservant",
+        "name": "Manservant",
+        "chance": "13",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:garrison_residence():faction():culture() == \"wh_main_emp_empire\""
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_jailer",
+        "name": "Jailer",
+        "chance": "13",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:garrison_residence():faction():culture() == \"wh_main_emp_empire\""
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_tomb_robber",
+        "name": "Tomb Robber",
+        "chance": "20",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:garrison_residence():faction():culture() == \"wh_main_vmp_vampire_counts\""
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_scribe",
+        "name": "Scribe",
+        "chance": "6",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character()) and context:character():military_force():unit_list():num_items() > 10"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_barber_surgeon",
+        "name": "Barber-Surgeon",
+        "chance": "6",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character()) and context:character():military_force():unit_list():num_items() > 10"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_bounty_hunter",
+        "name": "Bounty Hunter",
+        "chance": "8",
+        "event": "Character Looted Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character()) and context:character():military_force():unit_list():num_items() < 10"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_mercenary",
+        "name": "Mercenary",
+        "chance": "8",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_protagonist",
+        "name": "Antagonist",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_mutant",
+        "name": "Mutant",
+        "chance": "6",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_soldier",
+        "name": "Soldier",
+        "chance": "2",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_road_warden",
+        "name": "Road Warden",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:pending_battle():ambush_battle()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_army_beast_hunter",
+        "name": "Prize Hunter",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:pending_battle():ambush_battle()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_scout",
+        "name": "Chracian Scout",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:pending_battle():ambush_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_warlock",
+        "name": "Warlock",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:pending_battle():ambush_battle()"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_fimir_balefiend",
+        "name": "Fimir Balefiend",
+        "chance": "5",
+        "event": "Character Kills Battle Captives",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character())"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_slave_trader",
+        "name": "Slaver",
+        "chance": "5",
+        "event": "Character Kills Battle Captives",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character())"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_ogres_pit_fighter",
+        "name": "Pit Fighter",
+        "chance": "5",
+        "event": "Character Kills Battle Captives",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character())"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_raven_keeper",
+        "name": "Raven Keeper",
+        "chance": "5",
+        "event": "Character Kills Battle Captives",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general_with_army(context:character())"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_oar_slave",
+        "name": "Oar Slave",
+        "chance": "12",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_on_sea(context:character())"
+    },
+    {
+        "refname": "wh2_dlc11_anc_follower_cst_siren",
+        "name": "Siren",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_on_sea(context:character())"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_shipwright",
+        "name": "Shipwright",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_on_sea(context:character())"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_powder_mixer",
+        "name": "Powdermaker",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_can_recruit_unit(context:character(), \"wh_main_dwf_art_cannon\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_runesmith_apprentice",
+        "name": "Runesmith Apprentice",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():can_recruit_agent_at_settlement(\"runesmith\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_crone",
+        "name": "Crone",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():can_recruit_agent_at_settlement(\"spy\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_brewmaster",
+        "name": "Brewmaster",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_resource_exists(\"res_rom_glass\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_squig_mascot",
+        "name": "Squig Mascot",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_subtype(\"grn_goblin_great_shaman\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_boggart",
+        "name": "Boggart",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_subtype(\"grn_goblin_great_shaman\") and context:character():turns_in_own_regions() > 3 and context:character():battles_won() > 2"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_beast_tamer",
+        "name": "Beast Tamer",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_army_has_unit(context:character(), \"wh_main_chs_mon_chaos_warhounds_0\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_slayer_ward",
+        "name": "Slayer Ward",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_army_has_unit(context:character(), \"wh_main_dwf_inf_slayers\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_shroom_gathera",
+        "name": "'Shroom Gathera",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_army_has_unit(context:character(), \"wh_main_grn_inf_night_goblins\") or char_army_has_unit(context:character(), \"wh_main_grn_inf_night_goblin_archers\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_savage_orc_prodda",
+        "name": "Savage Orc Prodda",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_army_has_unit(context:character(), \"wh_main_grn_inf_savage_orcs\") or char_army_has_unit(context:character(), \"wh_main_grn_inf_savage_orc_arrer_boyz\") or char_army_has_unit(context:character(), \"wh_main_grn_cav_savage_orc_boar_boyz\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_spider",
+        "name": "Spider-God Priest",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_has_tech(context:character(), \"tech_grn_main_4_1\") and context:character():battles_fought() > 3"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_possessed",
+        "name": "Possessed",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_has_tech(context:character(), \"tech_chs_main_3\") and context:character():battles_fought() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_daughter_of_valaya",
+        "name": "Daughter of Valaya",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and char_has_tech(context:character(), \"tech_dwf_civ_6_4\") and context:character():battles_fought() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_vagabond",
+        "name": "Vagabond",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() > 21"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_elder_scout",
+        "name": "Elder Scout",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() > 21"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_servant",
+        "name": "Servant",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() > 21"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_eternal_guard_commander",
+        "name": "Eternal Guard Commander",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() > 21"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_archivist",
+        "name": "Great Plan Archivist",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_tradesman",
+        "name": "Tradesman",
+        "chance": "3",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_guildmaster",
+        "name": "Guildmaster",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_coachman",
+        "name": "Coachman",
+        "chance": "7",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_wine_merchant",
+        "name": "Eatainean Vintner",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_ferryman",
+        "name": "Ferryman",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_merchant",
+        "name": "Factor",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_smuggler",
+        "name": "Smuggler",
+        "chance": "7",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_value_percent() > 40 and context:character():model():turn_number() > 5 and context:character():model():turn_number() % 5 == 0 and context:character():can_equip_ancillary(\"wh_main_anc_follower_all_men_smuggler\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_scribe",
+        "name": "Scribe",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():turns_in_own_regions() > 3 and context:character():battles_won() > 2"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_zoat",
+        "name": "Zoat Servant",
+        "chance": "25",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():turns_in_enemy_regions() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_rat_catcher",
+        "name": "Rat Catcher",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():turns_in_enemy_regions() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_kislevite_kossar",
+        "name": "Kislevite Kossar",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and (context:character():region():name() == \"wh_main_troll_country_zoishenk\" or context:character():region():name() == \"wh_main_troll_country_erengrad\" or context:character():region():name() == \"wh_main_northern_oblast_fort_straghov\" or context:character():region():name() == \"wh_main_northern_oblast_fort_ostrosk\" or context:character():region():name() == \"wh_main_eastern_oblast_praag\" or context:character():region():name() == \"wh_main_eastern_oblast_volksgrad\" or context:character():region():name() == \"wh_main_southern_oblast_zavastra\" or context:character():region():name() == \"wh_main_southern_oblast_kislev\" or context:character():region():name() == \"wh_main_southern_oblast_fort_jakova\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_fisherman",
+        "name": "Fisherman",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():name() == \"wh_main_the_wasteland_marienburg\""
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_seaman",
+        "name": "Seaman",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():name() == \"wh_main_the_wasteland_marienburg\""
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_marine",
+        "name": "Marine",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():name() == \"wh_main_the_wasteland_marienburg\" and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_boatman",
+        "name": "Boatman",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():name() == \"wh_main_the_wasteland_marienburg\" and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_initiate",
+        "name": "Initiate",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():owning_faction():culture() == \"wh_main_vmp_vampire_counts\""
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_bone_picker",
+        "name": "Bone Picker",
+        "chance": "7",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():owning_faction():culture() == \"wh_main_vmp_vampire_counts\""
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_zealot",
+        "name": "Zealot",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():owning_faction():culture() == \"wh_main_vmp_vampire_counts\""
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_hawk_companion",
+        "name": "Hawk Companion",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() < 11"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_flying_spy",
+        "name": "Flying Spy",
+        "chance": "2",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() < 11"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_young_stag",
+        "name": "Young Stag",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() < 11"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_hunting_hound",
+        "name": "Hunting Hound",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() < 11"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_tollkeeper",
+        "name": "Tollkeeper",
+        "chance": "1",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():rank() < 11"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_poltergeist",
+        "name": "Restless Spirit",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_bodyguard",
+        "name": "Bodyguard",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_attendant",
+        "name": "Hibernation Attendant",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_bailiff",
+        "name": "Bailiff",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_black_cat",
+        "name": "Black Cat",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_idol_carva",
+        "name": "Idol Carva",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_teller_of_tales",
+        "name": "Teller of Tales",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_agitator",
+        "name": "Agitator",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_choir_master",
+        "name": "Choir Master",
+        "chance": "12",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_saboteur",
+        "name": "Clan Skryre Saboteur",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_burgher",
+        "name": "Burgher",
+        "chance": "12",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_food_taster",
+        "name": "Food Taster",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() >= 1 and context:character():region():public_order() < -20"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_stonemason",
+        "name": "Stonemason",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():trade_resource_exists(\"res_rom_marble\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_noble",
+        "name": "Noble",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():turns_in_own_regions() > 1 and context:character():region():public_order() < -25 and context:character():rank() > 11 and context:character():rank() < 21"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_shroom_gathera",
+        "name": "'Shroom Gathera",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_subtype(\"grn_night_goblin_shaman\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_squig_mascot",
+        "name": "Squig Mascot",
+        "chance": "4",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_subtype(\"grn_night_goblin_shaman\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_student",
+        "name": "Student",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():research_queue_idle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_archivist",
+        "name": "Archivist",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():research_queue_idle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_thief",
+        "name": "Thief",
+        "chance": "13",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_military_force() and (context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_SET_CAMP_RAIDING\" or context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_LAND_RAID\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_outlaw",
+        "name": "Outlaw",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_military_force() and (context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_SET_CAMP_RAIDING\" or context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_LAND_RAID\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_bat",
+        "name": "Bat-Winged Loony",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_military_force() and (context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_SET_CAMP_RAIDING\" or context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_LAND_RAID\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_jewelsmith",
+        "name": "Jewelsmith",
+        "chance": "25",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and (context:character():region():building_exists(\"wh_main_dwf_resource_gems_1\") or context:character():region():building_exists(\"wh_main_dwf_resource_gems_2\") or context:character():region():building_exists(\"wh_main_dwf_resource_gems_3\") or context:character():region():building_exists(\"wh_main_dwf_resource_gems_4\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_goldsmith",
+        "name": "Goldsmith",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and (context:character():region():building_exists(\"wh_main_dwf_resource_gold_1\") or context:character():region():building_exists(\"wh_main_dwf_resource_gold_2\") or context:character():region():building_exists(\"wh_main_dwf_resource_gold_3\") or context:character():region():building_exists(\"wh_main_dwf_resource_gold_4\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_miner",
+        "name": "Miner",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and (context:character():region():building_exists(\"wh_main_dwf_resource_iron_1\") or context:character():region():building_exists(\"wh_main_dwf_resource_iron_2\") or context:character():region():building_exists(\"wh_main_dwf_resource_iron_3\") or context:character():region():building_exists(\"wh_main_dwf_resource_iron_4\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_woodsman",
+        "name": "Woodsman",
+        "chance": "25",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and (context:character():region():building_exists(\"wh_main_emp_resource_timber_1\") or context:character():region():building_exists(\"wh_main_emp_resource_timber_2\") or context:character():region():building_exists(\"wh_main_emp_resource_timber_3\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_bretonnia_court_jester",
+        "name": "Court Jester",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_untainted\") < 0.7"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_dwarfen_tattooist",
+        "name": "Dwarfen Tattooist",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_untainted\") < 0.7"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_light_college_acolyte",
+        "name": "Light College Acolyte",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_untainted\") < 0.7"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_gobbo_ranta",
+        "name": "Gobbo Ranta",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and context:character():region():religion_proportion(\"wh_main_religion_untainted\") < 0.7"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_runebearer",
+        "name": "Runebearer",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_subtype(\"dwf_runesmith\") and not context:character():is_embedded_in_military_force()"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_backstabba",
+        "name": "Backstabba",
+        "chance": "50",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn() and context:character():offensive_battles_won() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_outrider",
+        "name": "Outrider",
+        "chance": "14",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn() and context:character():offensive_battles_won() > 3"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_barbarian",
+        "name": "Barbarian",
+        "chance": "18",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn() and context:character():offensive_battles_won() > 3"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_flayer",
+        "name": "Flayer",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn() and context:character():offensive_battles_won() > 3"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_diplomat",
+        "name": "Dark Prince's Envoy",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn() and context:character():offensive_battles_won() > 3"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_shieldbreaker",
+        "name": "Shieldbreaker",
+        "chance": "25",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_military_force() and context:character():military_force():active_stance() == \"MILITARY_FORCE_ACTIVE_STANCE_TYPE_TUNNELING\""
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_grave_digger",
+        "name": "Grave Digger",
+        "chance": "15",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_military_force() and context:character():military_force():contains_mercenaries()"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_shamans_lacky",
+        "name": "Shaman's Lackey",
+        "chance": "20",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():character_type(\"wizard\") and not context:character():is_embedded_in_military_force()"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_valet",
+        "name": "Valet",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():offensive_battles_won() > 5"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_pit_boss",
+        "name": "Pit Boss",
+        "chance": "10",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():offensive_battles_won() > 5"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_dwarf_bride",
+        "name": "Dwarf Bride",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():offensive_battles_won() > 5"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_magister",
+        "name": "Magister",
+        "chance": "5",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():offensive_battles_won() > 5"
+    },
+    {
+        "refname": "wh2_main_anc_follower_hef_bard",
+        "name": "Bard",
+        "chance": "8",
+        "event": "Character Gain Level",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():offensive_battles_won() > 5"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_bully",
+        "name": "Bully",
+        "chance": "20",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_darksoul",
+        "name": "Darksoul",
+        "chance": "6",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_artefact_hunter",
+        "name": "Artefact Hunter",
+        "chance": "25",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_def_slave",
+        "name": "High Elf Slave",
+        "chance": "30",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_collector",
+        "name": "Collector",
+        "chance": "5",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_kurgan_chieftain",
+        "name": "Kurgan Chieftain",
+        "chance": "5",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_artefact_hunter",
+        "name": "Artefact Hunter",
+        "chance": "25",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_prospector",
+        "name": "Prospector",
+        "chance": "5",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_snotling_scavengers",
+        "name": "Snotling Scavengers",
+        "chance": "30",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_slave_master",
+        "name": "Slave Master",
+        "chance": "25",
+        "event": "Character Sacked Settlement",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():faction():started_war_this_turn()"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_dung_collector",
+        "name": "Dung Shovela",
+        "chance": "20",
+        "event": "On End Of Character's Turn",
+        "condition": "not context:character():character_type(\"colonel\") and (not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():has_region() and has_poo(context:character():region())"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_hunter",
+        "name": "Hunter",
+        "chance": "5",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_camp_follower",
+        "name": "Camp Follower",
+        "chance": "6",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh2_dlc11_anc_follower_cst_travelling_necromancer",
+        "name": "Ship's Necromancer",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_norsca_berserker",
+        "name": "Norse Berserker",
+        "chance": "3",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_vauls_anvil_smith",
+        "name": "Vaul's Anvil Smith",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_forest_spirit",
+        "name": "Forest Spirit",
+        "chance": "15",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_corpse_thief",
+        "name": "Corpse Thief",
+        "chance": "3",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_wardancer_drummer",
+        "name": "Wardancer Drummer",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_dryad_spy",
+        "name": "Dryad Spy",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_apprentice_wizard",
+        "name": "Apprentice Wizard",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_dlc05_anc_follower_royal_standard_bearer",
+        "name": "Royal Standard Bearer",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_charcoal_burner",
+        "name": "Charcoal Burner",
+        "chance": "8",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_pox_carrier",
+        "name": "Pox-Carrier",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():model():turn_number() % 5 == 0"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_troll_slayer",
+        "name": "Troll Slayer",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and battle_featured_unit(context:pending_battle(), \"wh_main_grn_mon_trolls\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_swindla",
+        "name": "Swindla",
+        "chance": "40",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_warp_stone_hunter",
+        "name": "Warpstone Hunter",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_dreg",
+        "name": "Dreg",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_peasant",
+        "name": "Peasant",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_messenger",
+        "name": "Messenger",
+        "chance": "4",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and not context:character():has_ancillary(\"wh_main_anc_follower_empire_messenger\")"
+    },
+    {
+        "refname": "wh_dlc01_anc_follower_chaos_demagogue",
+        "name": "Demagogue",
+        "chance": "15",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():treasury() < 3000"
+    },
+    {
+        "refname": "wh_main_anc_follower_empire_entertainer",
+        "name": "Entertainer",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():treasury() < 3000"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_treasurer",
+        "name": "Treasurer",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():treasury() < 3000"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_cooper",
+        "name": "Cooper",
+        "chance": "15",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():treasury() < 3000"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_engineering_student",
+        "name": "Engineering Student",
+        "chance": "5",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:pending_battle():seige_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_sapper",
+        "name": "Sapper",
+        "chance": "5",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:pending_battle():seige_battle()"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_grudgekeeper",
+        "name": "Grudgekeeper",
+        "chance": "20",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and not context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh_main_grn_greenskins\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh_main_grn_greenskins\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_grave_robber",
+        "name": "Grave Robber",
+        "chance": "25",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and not context:character():won_battle() and (context:pending_battle():attacker() == context:character() and context:pending_battle():defender():faction():culture() == \"wh_main_vmp_vampire_counts\") or (context:pending_battle():defender() == context:character() and context:pending_battle():attacker():faction():culture() == \"wh_main_vmp_vampire_counts\")"
+    },
+    {
+        "refname": "wh2_main_anc_follower_skv_slave_human",
+        "name": "Man-Thing Slave",
+        "chance": "33",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_bretonnia_squire",
+        "name": "Squire",
+        "chance": "8",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_undead_mortal_informer",
+        "name": "Mortal Informer",
+        "chance": "13",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh2_main_anc_follower_lzd_sacrificial_victim_human",
+        "name": "Man-Spawn Sacrifice",
+        "chance": "50",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_dwarfs_reckoner",
+        "name": "Reckoner",
+        "chance": "10",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_men_militiaman",
+        "name": "Militiaman",
+        "chance": "13",
+        "event": "Character Completed Battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and not context:character():has_ancillary(\"wh_main_anc_follower_all_men_militiaman\") and cm:char_is_general(context:character()) and context:character():won_battle() and (context:pending_battle():attacker() == context:character() and (context:pending_battle():defender():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():defender():faction():culture() == \"wh_main_brt_bretonnia\")) or (context:pending_battle():defender() == context:character() and (context:pending_battle():attacker():faction():culture() == \"wh_main_emp_empire\" or context:pending_battle():attacker():faction():culture() == \"wh_main_brt_bretonnia\"))"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_swindla",
+        "name": "Swindla",
+        "chance": "40",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_main_anc_follower_greenskins_snotling_scavengers",
+        "name": "Snotling Scavengers",
+        "chance": "20",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():faction():losing_money()"
+    },
+    {
+        "refname": "wh_dlc03_anc_follower_beastmen_bray_shamans_familiar",
+        "name": "Bray-Shaman\u00e2\u20ac\u2122s Familiar",
+        "chance": "15",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():character_type(\"wizard\")"
+    },
+    {
+        "refname": "wh_main_anc_follower_all_hedge_wizard",
+        "name": "Hedge Wizard",
+        "chance": "20",
+        "event": "Character Was In battle",
+        "condition": "(not context:character():character_subtype(\"dlc07_brt_green_knight\")) and context:character():won_battle() and context:character():character_type(\"wizard\")"
+    }
+]
